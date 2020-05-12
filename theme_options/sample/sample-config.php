@@ -283,7 +283,15 @@
         'desc'             => __( 'This is general options', 'redux-framework-demo' ),
         'customizer_width' => '400px',
         'icon'             => 'el el-home'
-    ) );
+    ),
+    array(
+    'title'            => __( 'Footer', 'redux-framework-demo' ),
+    'id'               => 'footer',
+    'desc'             => __( 'This is footer options', 'redux-framework-demo' ),
+    'customizer_width' => '400px',
+    'icon'             => 'el el-home'
+    )
+);
 
     Redux::setSection( $opt_name, array(
         'title'            => __( 'Header', 'redux-framework-demo' ),
@@ -360,21 +368,22 @@
                 'default'  => '1234567890'
             ),  
 
-            array (
-                'id'         => 'paypal',
-                'icon'       => 'fa-paypal',
-                'enabled'    => false,
-                'name'       => __ ( 'PayPal', 'redux-framework-demo' ),
-                'background' => '',
-                'color'      => '#1769ff',
-                'url'        => '',
-            ),
-
-           
+              
             array(
-                'id'       => 'socail-network',
+                'id'       => 'social-toggle',
+                'type'     => 'button_set',
+                'title'    => __('Show Number', 'redux-framework-demo'),
+                //Must provide key => value pairs for options
+                'options' => array(
+                    '1' => 'On', 
+                    '2' => 'Off', 
+                 ), 
+                'default' => '1'
+                ),
+            array(
+                'id'       => 'social-network',
                 'type'     => 'sortable',
-                'title'    => __('Socail Network', 'redux-framework-demo'),
+                'title'    => __('Social Network', 'redux-framework-demo'),
                 'lable'    => true,
                 'options'  => array(
                     'Facebook'     => 'Enter Facebook Url',
@@ -382,6 +391,24 @@
                     'LinkedIn '     => 'Enter LinkedIn Url',
                 )
             ),
+
+            array(
+                'id'=>'opt-textarea',
+                'type' => 'textarea',
+                'title' => __('Google analytics code ', 'redux-framework-demo'), 
+                'validate' => 'html_custom',
+                'allowed_html' => array(
+                    'a' => array(
+                        'href' => array(),
+                        'title' => array()
+                    ),
+                    'br' => array(),
+                    'em' => array(),
+                    'strong' => array()
+                )
+            
+
+               ),
             
         
 
@@ -407,8 +434,6 @@
                     'textarea_rows'    => 10
                 )
             )
-
-           
         )
     ) );
   
@@ -545,6 +570,8 @@
             return $defaults;
         }
     }
+
+    
 
     /**
      * Removes the demo link and the notice of integrated demo from the redux-framework plugin
