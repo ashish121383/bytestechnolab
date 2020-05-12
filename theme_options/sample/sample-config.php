@@ -3,11 +3,9 @@
      * ReduxFramework Sample Config File
      * For full documentation, please visit: http://docs.reduxframework.com/
      */
-
     if ( ! class_exists( 'Redux' ) ) {
         return;
     }
-
 
     // This is your option name where all the Redux data is stored.
     $opt_name = "test_theme";
@@ -85,7 +83,7 @@
         'async_typography'     => false,
         // Use a asynchronous font on the front end or font string
         //'disable_google_fonts_link' => true,                    // Disable this in case you want to create your own google fonts loader
-        'admin_bar'            => false,
+        'admin_bar'            => true,
         // Show the panel pages on the admin bar
         'admin_bar_icon'       => 'dashicons-portfolio',
         // Choose an icon for the admin bar menu
@@ -366,9 +364,8 @@
                 'type'     => 'text',     
                 'subtitle'  => 'Please enter Number',           
                 'default'  => '1234567890'
-            ),  
-
-              
+            ), 
+            
             array(
                 'id'       => 'social-toggle',
                 'type'     => 'button_set',
@@ -401,7 +398,8 @@
            
         )
     ) );
-  
+
+    
     
 
     Redux::setSection( $opt_name, array(
@@ -410,6 +408,33 @@
         'subsection'       => true,
         'customizer_width' => '450px',       
         'fields'           => array(
+            array(
+                'id'        => 'footer-1',
+                'type'      => 'select',
+                'data'      => 'sidebars',
+                'title'     => __('Footer Column 1', 'redux-framework-demo'),
+            ),
+           
+            array(
+                'id'        => 'footer-2',
+                'type'      => 'select',
+                'data'      => 'sidebars',
+                'title'     => __('Footer Column 2', 'redux-framework-demo'),
+            ),
+           
+            array(
+                'id'        => 'footer-3',
+                'type'      => 'select',
+                'data'      => 'sidebars',
+                'title'     => __('Footer Column 3', 'redux-framework-demo'),
+            ),
+           
+            array(
+                'id'        => 'footer-4',
+                'type'      => 'select',
+                'data'      => 'sidebars',
+                'title'     => __('Footer Column 4', 'redux-framework-demo'),
+            ),
              array(
                 'id'               => 'copyright',
                 'type'             => 'editor',
