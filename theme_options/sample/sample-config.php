@@ -393,30 +393,16 @@
             ),
 
             array(
-                'id'=>'opt-textarea',
-                'type' => 'textarea',
-                'title' => __('Google analytics code ', 'redux-framework-demo'), 
-                'validate' => 'html_custom',
-                'allowed_html' => array(
-                    'a' => array(
-                        'href' => array(),
-                        'title' => array()
-                    ),
-                    'br' => array(),
-                    'em' => array(),
-                    'strong' => array()
-                )
-            
-
-               ),
-            
-        
-
-
+                'id'       => 'google-analytics-code',
+                'type'     => 'textarea',
+                'title'    => __( 'Google Analytics Code', 'redux-framework-demo' ),
+                'validate' => 'js'
+            ),
            
         )
     ) );
   
+    
 
     Redux::setSection( $opt_name, array(
         'title'            => __( 'Footer', 'redux-framework-demo' ),
